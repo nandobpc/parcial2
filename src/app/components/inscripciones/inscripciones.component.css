@@ -1,0 +1,55 @@
+/* Estilos para el formulario de creación de inscripciones */
+form {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+  }
+  
+  form select, form input, form button {
+    margin-bottom: 10px;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+  }
+  
+  form button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+  }
+  
+  form button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Estilos para la lista de inscripciones */
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  ul li {
+    background-color: #f8f9fa;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+  }
+  
+  ul li:hover {
+    background-color: #e9ecef;
+  }
+  
+  /* Estilos generales */
+  h2, h3 {
+    color: #343a40;
+  }
+  
+  h3 {
+    margin-top: 30px;
+  }
+  

@@ -1,0 +1,36 @@
+<div>
+    <h2>Lista de Inscripciones</h2>
+    
+    <!-- Lista de inscripciones -->
+    <ul>
+      <li *ngFor="let inscripcion of inscripciones">
+        <strong>Evento:</strong> {{ inscripcion.evento }}<br>
+        <strong>Participante:</strong> {{ inscripcion.participante }}<br>
+        <strong>Fecha de Inscripción:</strong> {{ inscripcion.fecha_inscripcion }}
+      </li>
+    </ul>
+  
+    <h3>Crear Nueva Inscripción</h3>
+  
+    <!-- Formulario para crear una nueva inscripción -->
+    <form (submit)="crearInscripcion()">
+      <select [(ngModel)]="inscripcion.evento_id" name="evento_id" required>
+        <option *ngFor="let evento of eventos" [value]="evento.evento_id">{{ evento.nombre }}</option>
+      </select>
+  
+      <select [(ngModel)]="inscripcion.participante_id" name="participante_id" required>
+        <option *ngFor="let participante of participantes" [value]="participante.participante_id">
+          {{ participante.nombre }} {{ participante.apellido }}
+        </option>
+      </select>
+  
+      <input 
+        type="date" 
+        [(ngModel)]="inscripcion.fecha_inscripcion" 
+        name="fecha_inscripcion" 
+        required>
+  
+      <button type="submit">Crear Inscripción</button>
+    </form>
+  </div>
+  

@@ -1,0 +1,46 @@
+<div>
+    <h2>Lista de Participantes</h2>
+  
+    <!-- Lista de participantes -->
+    <ul>
+      <li *ngFor="let participante of participantes">
+        <strong>Nombre:</strong> {{ participante.nombre }} {{ participante.apellido }}<br>
+        <strong>Email:</strong> {{ participante.email || 'No disponible' }}<br>
+        <strong>Teléfono:</strong> {{ participante.telefono || 'No disponible' }}
+      </li>
+    </ul>
+  
+    <h3>Crear Nuevo Participante</h3>
+  
+    <!-- Formulario para crear un nuevo participante -->
+    <form (submit)="crearParticipante()">
+      <input 
+        type="text" 
+        [(ngModel)]="participante.nombre" 
+        name="nombre" 
+        placeholder="Nombre" 
+        required>
+      
+      <input 
+        type="text" 
+        [(ngModel)]="participante.apellido" 
+        name="apellido" 
+        placeholder="Apellido" 
+        required>
+  
+      <input 
+        type="email" 
+        [(ngModel)]="participante.email" 
+        name="email" 
+        placeholder="Correo electrónico">
+  
+      <input 
+        type="text" 
+        [(ngModel)]="participante.telefono" 
+        name="telefono" 
+        placeholder="Teléfono">
+  
+      <button type="submit">Crear Participante</button>
+    </form>
+  </div>
+  

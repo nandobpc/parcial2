@@ -1,0 +1,45 @@
+<div>
+    <h2>Lista de Eventos</h2>
+    
+    <!-- Lista de eventos -->
+    <ul>
+      <li *ngFor="let evento of eventos">
+        <strong>{{ evento.nombre }}</strong><br>
+        Fecha: {{ evento.fecha }}<br>
+        Ubicación: {{ evento.ubicacion }}<br>
+        Descripción: {{ evento.descripcion || 'Sin descripción' }}
+      </li>
+    </ul>
+  
+    <h3>Crear Nuevo Evento</h3>
+  
+    <!-- Formulario para crear un nuevo evento -->
+    <form (submit)="crearEvento()">
+      <input 
+        type="text" 
+        [(ngModel)]="evento.nombre" 
+        name="nombre" 
+        placeholder="Nombre del evento" 
+        required>
+      
+      <input 
+        type="date" 
+        [(ngModel)]="evento.fecha" 
+        name="fecha" 
+        required>
+  
+      <input 
+        type="text" 
+        [(ngModel)]="evento.ubicacion" 
+        name="ubicacion" 
+        placeholder="Ubicación">
+  
+      <textarea 
+        [(ngModel)]="evento.descripcion" 
+        name="descripcion" 
+        placeholder="Descripción"></textarea>
+  
+      <button type="submit">Crear Evento</button>
+    </form>
+  </div>
+  
